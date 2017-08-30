@@ -1,0 +1,42 @@
+<html>
+<head>
+</head>
+<script src="script.js"></script>
+<body>
+<script>
+  var figures = [];
+
+  figures[0] = new Pawn(ChessColor.Black, new Position(1,4));
+  figures[1] = new Pawn(ChessColor.White, new Position(3,4));
+  figures[2] = new King(ChessColor.Black, new Position(5,4));
+  figures[3] = new Bishop(ChessColor.White, new Position(5,5));
+  figures[4] = new Castle(ChessColor.White, new Position(3,7));
+  console.log(figures);
+
+  //Check overloading to string
+  for(var i = 0; i < 5; i++) {
+    console.log("" + figures[i]);
+  }
+
+  //Checking canMove
+  console.log("figures[0] can move " + figures[0].canMove(new Position(figures[0].position.x, figures[0].position.y + 1)));
+  console.log("figures[0] can move " + figures[0].canMove(new Position(figures[0].position.x, figures[0].position.y - 1)));
+
+  console.log("figures[1] can move " + figures[1].canMove(new Position(figures[1].position.x, figures[1].position.y + 1)));
+  console.log("figures[1] can move " + figures[1].canMove(new Position(figures[1].position.x, figures[1].position.y - 1)));
+
+  console.log("figures[2] can move " + figures[2].canMove(new Position(figures[2].position.x + 1, figures[2].position.y + 1)));
+  console.log("figures[2] can move " + figures[2].canMove(new Position(figures[2].position.x, figures[2].position.y - 2)));
+
+  console.log("figures[3] can move " + figures[3].canMove(new Position(figures[3].position.x + 1, figures[3].position.y + 1)));
+  console.log("figures[3] can move " + figures[3].canMove(new Position(figures[3].position.x + 1, figures[3].position.y + 2)));
+
+  console.log("figures[4] can move " + figures[4].canMove(new Position(figures[4].position.x, figures[4].position.y - 1)));
+  console.log("figures[4] can move " + figures[4].canMove(new Position(figures[4].position.x - 1, figures[4].position.y - 1)));
+
+</script>
+<pre>
+  To see what really happen please look at the console.
+  console is in developer window. To open it please press F12.</pre>
+</body>
+</html>
